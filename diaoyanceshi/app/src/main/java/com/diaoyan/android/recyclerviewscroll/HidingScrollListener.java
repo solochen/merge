@@ -1,4 +1,4 @@
-package com.diaoyan.android;
+package com.diaoyan.android.recyclerviewscroll;
 
 import android.support.v7.widget.RecyclerView;
 

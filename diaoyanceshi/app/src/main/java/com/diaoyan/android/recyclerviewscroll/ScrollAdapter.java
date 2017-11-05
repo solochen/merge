@@ -1,8 +1,10 @@
-package com.diaoyan.android;
+package com.diaoyan.android.recyclerviewscroll;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.diaoyan.android.R;
 
 import java.util.ArrayList;
 import java.util.List;
