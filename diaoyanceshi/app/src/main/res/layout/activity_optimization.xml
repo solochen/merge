@@ -7,28 +7,25 @@
     android:orientation="vertical">
 
     <Button
-        android:id="@+id/btn_recycler_scroll"
+        android:id="@+id/btn_crash"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:textSize="14sp"
-        android:text="recyclerviewscroll"
+        android:text="点击崩溃"
         android:onClick="onBtnClick"/>
 
-    <Button
-        android:id="@+id/btn_reflection"
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:textSize="22sp"
+        android:text="使用库 CustomActivityOnCrash"
+        android:textStyle="bold"
+        />
+
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:textSize="14sp"
-        android:text="recyclerviewscroll"
-        android:onClick="onBtnClick"/>
-
-    <Button
-        android:id="@+id/btn_go_crash"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:textSize="14sp"
-        android:text="crash"
-        android:onClick="onBtnClick"/>
-
-
+        android:text="github地址：\n https://github.com/Ereza/CustomActivityOnCrash"
+        />
 </LinearLayout>
