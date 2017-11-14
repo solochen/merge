@@ -9,6 +9,7 @@ import android.view.View;
 import com.diaoyan.android.crashoptimizition.OptimizationActivity;
 import com.diaoyan.android.recyclerviewscroll.RecyclerViewScrollActivity;
 import com.diaoyan.android.reflection.ReflectionActivity;
+import com.diaoyan.android.videolist.ui.VideoMutilActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -30,6 +31,9 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.btn_go_crash:
                 startActivity(new Intent(mContext, OptimizationActivity.class));
+                break;
+            case R.id.btn_video_play:
+                startActivity(new Intent(mContext, VideoMutilActivity.class));
                 break;
         }
     }

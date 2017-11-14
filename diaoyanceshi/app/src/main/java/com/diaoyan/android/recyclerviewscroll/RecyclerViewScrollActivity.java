@@ -10,7 +10,6 @@ import android.view.animation.AccelerateInterpolator;
 import android.view.animation.DecelerateInterpolator;
 import android.widget.TextView;
 
-import com.diaoyan.android.MainActivity;
 import com.diaoyan.android.R;
 
 /**

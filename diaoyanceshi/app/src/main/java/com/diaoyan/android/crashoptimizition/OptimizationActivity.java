@@ -19,13 +19,6 @@ public class OptimizationActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_optimization);
-
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                throw new RuntimeException("Boom!");
-            }
-        }, 10000);
     }
 
     public void onBtnClick(View v){

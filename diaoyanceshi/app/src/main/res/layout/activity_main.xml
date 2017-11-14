@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="#33ccff">
 
     <Button
         android:id="@+id/btn_recycler_scroll"
@@ -19,7 +20,7 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:textSize="14sp"
-        android:text="recyclerviewscroll"
+        android:text="java reflection"
         android:onClick="onBtnClick"/>
 
     <Button
@@ -28,6 +29,14 @@
         android:layout_height="50dp"
         android:textSize="14sp"
         android:text="crash"
+        android:onClick="onBtnClick"/>
+
+    <Button
+        android:id="@+id/btn_video_play"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:textSize="14sp"
+        android:text="videoplay"
         android:onClick="onBtnClick"/>
 
 
