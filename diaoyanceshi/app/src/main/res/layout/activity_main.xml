@@ -39,5 +39,13 @@
         android:text="videoplay"
         android:onClick="onBtnClick"/>
 
+    <Button
+        android:id="@+id/btn_xianyu_keyboard"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:textSize="14sp"
+        android:text="customkeyboard"
+        android:onClick="onBtnClick"/>
+
 
 </LinearLayout>

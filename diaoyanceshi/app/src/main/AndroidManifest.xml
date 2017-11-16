@@ -27,6 +27,7 @@
         <activity android:name=".crashoptimizition.OptimizationActivity" />
 
         <activity android:name=".videolist.ui.VideoMutilActivity" />
+        <activity android:name=".keyboard.XianYuActivity" />
     </application>
 
 </manifest>
