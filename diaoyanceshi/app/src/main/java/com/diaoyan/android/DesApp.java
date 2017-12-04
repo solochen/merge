@@ -13,6 +13,7 @@ public class DesApp extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+        String jjj = "";
         CaocConfig.Builder.create()
                 .backgroundMode(CaocConfig.BACKGROUND_MODE_SILENT) //default: CaocConfig.BACKGROUND_MODE_SHOW_CUSTOM
                 .enabled(true) //default: true
