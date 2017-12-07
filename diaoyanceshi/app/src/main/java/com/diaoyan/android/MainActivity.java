@@ -7,10 +7,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import com.diaoyan.android.crashoptimizition.OptimizationActivity;
+import com.diaoyan.android.dragview.DragActivity;
 import com.diaoyan.android.keyboard.XianYuActivity;
 import com.diaoyan.android.recyclerviewscroll.RecyclerViewScrollActivity;
 import com.diaoyan.android.reflection.ReflectionActivity;
 import com.diaoyan.android.videolist.ui.VideoMutilActivity;
+import com.diaoyan.android.widget.DragCustomView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -38,6 +40,9 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.btn_xianyu_keyboard:
                 startActivity(new Intent(mContext, XianYuActivity.class));
+                break;
+            case R.id.btn_drag:
+                startActivity(new Intent(mContext, DragActivity.class));
                 break;
         }
     }

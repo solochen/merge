@@ -47,5 +47,13 @@
         android:text="customkeyboard"
         android:onClick="onBtnClick"/>
 
+    <Button
+        android:id="@+id/btn_drag"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:textSize="14sp"
+        android:text="drag view"
+        android:onClick="onBtnClick"/>
+
 
 </LinearLayout>
