@@ -3,6 +3,7 @@ package com.diaoyan.android.downloadmanage;
 import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.util.Log;
 
 import com.diaoyan.android.R;
 
@@ -17,7 +18,7 @@ public class DownloadActivity extends Activity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_download_list);
-
+        Log.e("", "");
 
     }
 
