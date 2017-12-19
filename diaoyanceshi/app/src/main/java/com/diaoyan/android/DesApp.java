@@ -25,5 +25,6 @@ public class DesApp extends Application {
                 .errorActivity(CrashActivity.class) //default: null (default error activity)
                 .eventListener(null) //default: null
                 .apply();
+        //zhelishiceshi
     }
 }
