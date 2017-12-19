@@ -16,7 +16,7 @@ import com.diaoyan.android.R;
  * Created by chenshaolong on 2017/12/7.
  */
 
-public class DragCustomView extends RelativeLayout {
+public class DragCustomView extends LinearLayout {
 
     private ViewDragHelper mDragHelper;
 
@@ -60,10 +60,10 @@ public class DragCustomView extends RelativeLayout {
         @Override
         public boolean tryCaptureView(View view, int pointerId) {
 //          return mCanDragView == view;
-            if(view.getId() == R.id.view_first){
-                return true;
-            }
-            return false;
+//            if(view.getId() == R.id.view_first){
+//                return true;
+//            }
+            return true;
         }
 
         /**

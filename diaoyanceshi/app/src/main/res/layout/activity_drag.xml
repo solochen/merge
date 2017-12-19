@@ -1,22 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.diaoyan.android.widget.DragCustomView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/parent_view"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    >
+    android:layout_height="match_parent">
 
+    <com.diaoyan.android.widget.DragCustomView
+        android:id="@+id/container_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingTop="60dp"
+        android:gravity="right"
+        >
+
+
+    </com.diaoyan.android.widget.DragCustomView>
 
     <View
-        android:id="@+id/view_first"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
+        android:id="@+id/header_view"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
         android:background="#ccc" />
 
-    <View
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:background="#33ccff" />
 
-</com.diaoyan.android.widget.DragCustomView>
+    <Button
+        android:id="@+id/btn_add_one"
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        android:onClick="onBtnClick"
+        android:text="add first" />
+
+    <Button
+        android:id="@+id/btn_add_two"
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        android:onClick="onBtnClick"
+        android:layout_toRightOf="@id/btn_add_one"
+        android:text="add second" />
+
+    <Button
+        android:id="@+id/btn_add_third"
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        android:onClick="onBtnClick"
+        android:layout_toRightOf="@id/btn_add_two"
+        android:text="add third" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/header_view"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btn_remove_first"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:onClick="onBtnClick"
+            android:text="remove first view" />
+
+        <Button
+            android:id="@+id/btn_remove_second"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:onClick="onBtnClick"
+            android:text="remove second view" />
+
+        <Button
+            android:id="@+id/btn_remove_third"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:onClick="onBtnClick"
+            android:text="remove third view" />
+
+        <Button
+            android:id="@+id/btn_reset"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:onClick="onBtnClick"
+            android:text="reset" />
+
+    </LinearLayout>
+</RelativeLayout>
