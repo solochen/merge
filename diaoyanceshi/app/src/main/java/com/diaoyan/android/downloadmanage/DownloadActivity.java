@@ -18,7 +18,7 @@ public class DownloadActivity extends Activity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_download_list);
-        Log.e("", "");
+        Log.e("aaa", "bbb");
 
     }
 
