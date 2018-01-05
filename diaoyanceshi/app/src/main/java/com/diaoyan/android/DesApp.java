@@ -2,6 +2,9 @@ package com.diaoyan.android;
 
 import android.app.Application;
 import com.diaoyan.android.crashoptimizition.CrashActivity;
+import com.sololibrary.library.http.OkGoHttp;
+import com.sololibrary.library.utils.NetUtil;
+
 import cat.ereza.customactivityoncrash.config.CaocConfig;
 
 /**
@@ -10,10 +13,12 @@ import cat.ereza.customactivityoncrash.config.CaocConfig;
 
 public class DesApp extends Application {
 
+    public static DesApp app;
+
     @Override
     public void onCreate() {
         super.onCreate();
-        String jjj = "";
+        app = this;
         CaocConfig.Builder.create()
                 .backgroundMode(CaocConfig.BACKGROUND_MODE_SILENT) //default: CaocConfig.BACKGROUND_MODE_SHOW_CUSTOM
                 .enabled(true) //default: true
@@ -25,6 +30,7 @@ public class DesApp extends Application {
                 .errorActivity(CrashActivity.class) //default: null (default error activity)
                 .eventListener(null) //default: null
                 .apply();
-        //zhelishiceshi
+
+        OkGoHttp.INSTANCE.initOkGo(this);
     }
 }

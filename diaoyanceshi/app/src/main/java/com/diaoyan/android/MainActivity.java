@@ -9,6 +9,7 @@ import android.view.View;
 import com.diaoyan.android.crashoptimizition.OptimizationActivity;
 import com.diaoyan.android.dragview.DragActivity;
 import com.diaoyan.android.keyboard.XianYuActivity;
+import com.diaoyan.android.kotlin.TestKotlinActivity;
 import com.diaoyan.android.recyclerviewscroll.RecyclerViewScrollActivity;
 import com.diaoyan.android.reflection.ReflectionActivity;
 import com.diaoyan.android.videolist.ui.VideoMutilActivity;
@@ -43,6 +44,9 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.btn_drag:
                 startActivity(new Intent(mContext, DragActivity.class));
+                break;
+            case R.id.btn_kotlin:
+                startActivity(new Intent(mContext, TestKotlinActivity.class));
                 break;
         }
     }
