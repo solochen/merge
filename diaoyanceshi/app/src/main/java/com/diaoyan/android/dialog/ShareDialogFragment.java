@@ -52,6 +52,7 @@ public class ShareDialogFragment extends DialogFragment implements View.OnClickL
         lp.height = WindowManager.LayoutParams.WRAP_CONTENT;
         lp.gravity = Gravity.BOTTOM;
         lp.windowAnimations = R.style.BottomDialogAnimation;
+        lp.dimAmount = 0.5f;
         window.setAttributes(lp);
         window.setBackgroundDrawable(new ColorDrawable());
     }
