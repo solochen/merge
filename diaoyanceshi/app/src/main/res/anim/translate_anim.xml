@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android"
+    android:interpolator="@android:anim/bounce_interpolator">
+    <translate
+        android:duration="3000"
+
+        />
+
+    <!--
+        android:duration="3000" 动画持续时间 3s
+        android:fromDegrees="0"  动画开始时的角度
+        android:toDegrees="360" 动画旋转到360度
+        android:pivotX="50%"    x 轴
+        android:pivotY="50%"     y 轴  50% 正好是中心点
+        android:repeatCount="-1" 动画重复次数  -1 一直重复
+    -->
+</set>

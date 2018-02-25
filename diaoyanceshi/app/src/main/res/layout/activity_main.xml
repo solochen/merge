@@ -55,13 +55,4 @@
         android:text="drag view"
         android:onClick="onBtnClick"/>
 
-
-    <Button
-        android:id="@+id/btn_kotlin"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:textSize="14sp"
-        android:text="kotlin"
-        android:onClick="onBtnClick"/>
-
 </LinearLayout>

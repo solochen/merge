@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/btn_change"
+        android:layout_width="100dp"
+        android:layout_height="45dp"
+        android:text="点 击"/>
+
+    <ImageView
+        android:id="@+id/tv_name"
+        android:layout_width="5dp"
+        android:layout_height="5dp"
+        android:layout_centerInParent="true"
+        android:src="@mipmap/fireworks"
+        android:visibility="gone"
+        />
+
+    <ImageView
+        android:id="@+id/tv_name2"
+        android:layout_width="5dp"
+        android:layout_height="5dp"
+        android:translationX="-50dp"
+        android:translationY="-50dp"
+        android:layout_centerInParent="true"
+        android:src="@mipmap/fireworks"
+        android:visibility="gone"
+
+        />
+
+    <ImageView
+        android:id="@+id/tv_name3"
+        android:layout_width="5dp"
+        android:layout_height="5dp"
+        android:translationX="40dp"
+        android:translationY="30dp"
+        android:layout_centerInParent="true"
+        android:src="@mipmap/fireworks"
+        android:visibility="gone"
+
+        />
+
+    <ImageView
+        android:id="@+id/tv_name4"
+        android:layout_width="5dp"
+        android:layout_height="5dp"
+        android:translationX="50dp"
+        android:translationY="-30dp"
+        android:layout_centerInParent="true"
+        android:src="@mipmap/fireworks"
+        android:visibility="gone"
+
+        />
+
+</RelativeLayout>

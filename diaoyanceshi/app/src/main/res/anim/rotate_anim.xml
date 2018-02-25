@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android"
+    android:interpolator="@android:anim/linear_interpolator"
+    android:fillAfter="true"
+    android:duration="3000">
+
+    <rotate
+        android:repeatCount="1"
+        android:fromDegrees="0"
+        android:pivotX="50%"
+        android:pivotY="50%"
+        android:toDegrees="360" />
+
+    <translate
+        android:repeatCount="1"
+        android:fromXDelta="0%"
+        android:fromYDelta="0%"
+        android:toXDelta="-50%"
+        android:toYDelta="0%" />
+
+    <scale
+        android:fromXScale="0.0"
+        android:fromYScale="0.0"
+        android:interpolator="@android:anim/decelerate_interpolator"
+        android:pivotX="50%"
+        android:pivotY="50%"
+        android:repeatCount="-1"
+        android:repeatMode="reverse"
+        android:toXScale="1.5"
+        android:toYScale="1.5"
+
+        />
+
+
+    <!--
+        android:duration="3000" 动画持续时间 3s
+        android:fromDegrees="0"  动画开始时的角度
+        android:toDegrees="360" 动画旋转到360度
+        android:pivotX="50%"    x 轴
+        android:pivotY="50%"     y 轴  50% 正好是中心点
+        android:repeatCount="-1" 动画重复次数  -1 一直重复
+    -->
+</set>
