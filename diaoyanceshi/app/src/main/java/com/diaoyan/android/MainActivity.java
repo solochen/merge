@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import com.diaoyan.android.crashoptimizition.OptimizationActivity;
+import com.diaoyan.android.dialog.ShareDialogFragment;
 import com.diaoyan.android.dragview.DragActivity;
 import com.diaoyan.android.keyboard.XianYuActivity;
 import com.diaoyan.android.recyclerviewscroll.RecyclerViewScrollActivity;
@@ -42,6 +43,9 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.btn_drag:
                 startActivity(new Intent(mContext, DragActivity.class));
+                break;
+            case R.id.btn_share:
+                ShareDialogFragment.newInstance().show(getSupportFragmentManager(), "share_dialog");
                 break;
         }
     }
