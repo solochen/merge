@@ -1,4 +1,6 @@
-package com.diaoyan.android.model.net;
+package com.diaoyan.android.model.net.interceptor;
+
+import com.diaoyan.android.model.net.CommonParams;
 
 import java.io.IOException;
 import java.util.Map;

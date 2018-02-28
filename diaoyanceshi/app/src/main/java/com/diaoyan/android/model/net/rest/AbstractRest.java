@@ -1,6 +1,7 @@
-package com.diaoyan.android.model.net;
+package com.diaoyan.android.model.net.rest;
 
 import com.diaoyan.android.model.bean.BaseBean;
+import com.diaoyan.android.model.net.interceptor.BaseInterceptor;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 

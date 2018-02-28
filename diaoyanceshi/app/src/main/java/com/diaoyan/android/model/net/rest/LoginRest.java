@@ -1,10 +1,9 @@
-package com.diaoyan.android.model.net.reset;
+package com.diaoyan.android.model.net.rest;
 
 import android.util.ArrayMap;
 
 import com.diaoyan.android.model.bean.BaseBean;
 import com.diaoyan.android.model.bean.UserBean;
-import com.diaoyan.android.model.net.AbstractRest;
 import com.diaoyan.android.model.net.CommonParams;
 import com.diaoyan.android.model.net.Hosts;
 import com.diaoyan.android.model.net.service.UserService;

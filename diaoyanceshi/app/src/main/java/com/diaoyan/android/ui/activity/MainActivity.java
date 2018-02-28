@@ -9,7 +9,7 @@ import android.widget.Toast;
 import com.diaoyan.android.R;
 import com.diaoyan.android.base.BaseActivity;
 import com.diaoyan.android.model.bean.UserBean;
-import com.diaoyan.android.model.net.reset.LoginRest;
+import com.diaoyan.android.model.net.rest.LoginRest;
 import com.diaoyan.android.ui.activity.crashoptimizition.OptimizationActivity;
 import com.diaoyan.android.ui.dialog.ShareDialogFragment;
 import com.diaoyan.android.ui.activity.dragview.DragActivity;
@@ -20,7 +20,6 @@ import com.diaoyan.android.utils.WindowUtil;
 import com.diaoyan.android.ui.activity.videolist.ui.VideoMutilActivity;
 
 import rx.Subscriber;
-import rx.Subscription;
 
 public class MainActivity extends BaseActivity {
 
@@ -88,7 +87,11 @@ public class MainActivity extends BaseActivity {
 
     @Override
     protected void onDestroy() {
+        Toast.makeText(mContext, "onDestory1111", Toast.LENGTH_SHORT).show();
         super.onDestroy();
-        mSubscriber.unsubscribe();
+        Toast.makeText(mContext, "onDestory2222", Toast.LENGTH_SHORT).show();
+        if(mSubscriber != null) {
+            mSubscriber.unsubscribe();
+        }
     }
 }
