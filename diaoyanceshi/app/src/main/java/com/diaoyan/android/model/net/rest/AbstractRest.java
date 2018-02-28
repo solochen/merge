@@ -4,20 +4,17 @@ import com.diaoyan.android.model.bean.BaseBean;
 import com.diaoyan.android.model.net.interceptor.BaseInterceptor;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 
 import java.util.concurrent.TimeUnit;
 
+import io.reactivex.exceptions.Exceptions;
+import io.reactivex.functions.Function;
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Response;
 import retrofit2.Retrofit;
-import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
-import rx.Observable;
-import rx.android.schedulers.AndroidSchedulers;
-import rx.exceptions.Exceptions;
-import rx.functions.Func1;
-import rx.schedulers.Schedulers;
 
 /**
  * Created by chenshaolong on 2018/2/28.
@@ -43,7 +40,7 @@ public abstract class AbstractRest {
         mRetrofit = new Retrofit.Builder()
                 .client(getHttpClientBuilder().build())
                 .addConverterFactory(GsonConverterFactory.create(gson))
-                .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
+                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .baseUrl(host)
                 .build();
     }
@@ -59,16 +56,17 @@ public abstract class AbstractRest {
         return builder;
     }
 
-    protected Func1<Response<? extends BaseBean>, BaseBean> parseFun = new Func1<Response<? extends BaseBean>, BaseBean>() {
+    protected Function<Response<? extends BaseBean>, BaseBean> parseFun = new Function<Response<? extends BaseBean>, BaseBean>() {
         @Override
-        public BaseBean call(Response<? extends BaseBean> initEntityResponse) {
+        public BaseBean apply(Response<? extends BaseBean> response) throws Exception {
             try {
-                return parseEntity(initEntityResponse);
+                return parseEntity(response);
             } catch (Throwable throwable) {
                 throw Exceptions.propagate(throwable);
             }
         }
     };
+
 
     protected BaseBean parseEntity(Response<? extends BaseBean> initEntityResponse) throws Throwable {
         if (initEntityResponse.body() == null && initEntityResponse.errorBody() != null) {
@@ -76,19 +74,6 @@ public abstract class AbstractRest {
         }
         return initEntityResponse.body();
     }
-
-
-    protected Observable.Transformer schedulersTransformer() {
-        return new Observable.Transformer() {
-            @Override
-            public Object call(Object observable) {
-                return ((Observable) observable).subscribeOn(Schedulers.io())
-                        .unsubscribeOn(Schedulers.io())
-                        .observeOn(AndroidSchedulers.mainThread());
-            }
-        };
-    }
-
 
 
 }

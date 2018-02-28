@@ -19,12 +19,14 @@ import com.diaoyan.android.ui.activity.reflection.ReflectionActivity;
 import com.diaoyan.android.utils.WindowUtil;
 import com.diaoyan.android.ui.activity.videolist.ui.VideoMutilActivity;
 
-import rx.Subscriber;
+import io.reactivex.Observer;
+import io.reactivex.disposables.Disposable;
+
 
 public class MainActivity extends BaseActivity {
 
     Context mContext;
-    Subscriber<UserBean> mSubscriber;
+    Observer<UserBean> mLoginObserver;
 
 
     @Override
@@ -61,26 +63,38 @@ public class MainActivity extends BaseActivity {
             case R.id.btn_login:
                 String phone = "18612532078";
                 String code = "642895";
-                if(mSubscriber != null) {
-                    mSubscriber.unsubscribe();
-                }
-                mSubscriber = new Subscriber<UserBean>() {
+                mLoginObserver = new Observer<UserBean>() {
+
+                    Disposable disposable;
+
                     @Override
-                    public void onCompleted() {
-                        Toast.makeText(mContext, "onComplete", Toast.LENGTH_SHORT).show();
+                    public void onSubscribe(Disposable d) {
+                        disposable = d;
+                        mDisposables.add(d);
+                    }
+
+                    @Override
+                    public void onNext(UserBean value) {
+                        Toast.makeText(mContext, "onNext", Toast.LENGTH_SHORT).show();
                     }
 
                     @Override
                     public void onError(Throwable e) {
+                        if (disposable != null && !disposable.isDisposed()) {
+                            disposable.dispose();
+                        }
                         Toast.makeText(mContext, "error", Toast.LENGTH_SHORT).show();
                     }
 
                     @Override
-                    public void onNext(UserBean user) {
-                        Toast.makeText(mContext, "onNext", Toast.LENGTH_SHORT).show();
+                    public void onComplete() {
+                        if (disposable != null && !disposable.isDisposed()) {
+                            disposable.dispose();
+                        }
+                        Toast.makeText(mContext, "onComplete", Toast.LENGTH_SHORT).show();
                     }
                 };
-                LoginRest.getInstance().loginByMobile(phone, code, mSubscriber);
+                LoginRest.getInstance().loginByMobile(phone, code, mLoginObserver);
                 break;
         }
     }
@@ -90,8 +104,9 @@ public class MainActivity extends BaseActivity {
         Toast.makeText(mContext, "onDestory1111", Toast.LENGTH_SHORT).show();
         super.onDestroy();
         Toast.makeText(mContext, "onDestory2222", Toast.LENGTH_SHORT).show();
-        if(mSubscriber != null) {
-            mSubscriber.unsubscribe();
+        if(mDisposables != null) {
+            mDisposables.dispose();
         }
     }
+
 }

@@ -6,12 +6,15 @@ import android.support.v4.app.FragmentActivity;
 
 import com.jude.swipbackhelper.SwipeBackHelper;
 
+import io.reactivex.disposables.CompositeDisposable;
+
 /**
  * Created by chenshaolong on 2018/2/26.
  */
 
 public class BaseActivity extends FragmentActivity {
 
+    protected CompositeDisposable mDisposables = new CompositeDisposable();
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {

@@ -4,10 +4,10 @@ import com.diaoyan.android.model.bean.UserBean;
 
 import java.util.Map;
 
+import io.reactivex.Observable;
 import retrofit2.Response;
 import retrofit2.http.POST;
 import retrofit2.http.QueryMap;
-import rx.Observable;
 
 /**
  * Created by chenshaolong on 2018/2/28.
