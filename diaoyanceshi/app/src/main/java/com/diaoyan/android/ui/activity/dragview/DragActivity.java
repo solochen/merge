@@ -7,7 +7,7 @@ import android.view.View;
 
 import com.diaoyan.android.R;
 import com.diaoyan.android.base.BaseActivity;
-import com.diaoyan.android.widget.DragCustomView;
+import com.diaoyan.android.ui.custom.DragCustomView;
 
 import static com.diaoyan.android.ui.activity.dragview.LivePlayerHelper.getRTCWindowView;
 import static com.diaoyan.android.ui.activity.dragview.LivePlayerHelper.removeRTCView;

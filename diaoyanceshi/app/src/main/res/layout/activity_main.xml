@@ -63,12 +63,20 @@
         android:text="分享"
         android:onClick="onBtnClick"/>
 
-    <com.diaoyan.android.ui.custom.DefineView
-        xmlns:hc="http://schemas.android.com/apk/res-auto"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:gravity="center"
-        android:text="安全"
-        hc:background_second_color="#ff2d55"
-        />
+    <Button
+        android:id="@+id/btn_login"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:textSize="14sp"
+        android:text="登录"
+        android:onClick="onBtnClick"/>
+
+    <!--<com.diaoyan.android.ui.custom.DefineView-->
+        <!--xmlns:hc="http://schemas.android.com/apk/res-auto"-->
+        <!--android:layout_width="200dp"-->
+        <!--android:layout_height="200dp"-->
+        <!--android:gravity="center"-->
+        <!--android:text="安全"-->
+        <!--hc:background_second_color="#ff2d55"-->
+        <!--/>-->
 </LinearLayout>
