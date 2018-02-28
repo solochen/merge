@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#33ccff">
+  >
 
     <Button
         android:id="@+id/btn_recycler_scroll"
@@ -62,4 +62,13 @@
         android:textSize="14sp"
         android:text="分享"
         android:onClick="onBtnClick"/>
+
+    <com.diaoyan.android.ui.custom.DefineView
+        xmlns:hc="http://schemas.android.com/apk/res-auto"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:gravity="center"
+        android:text="安全"
+        hc:background_second_color="#ff2d55"
+        />
 </LinearLayout>

@@ -13,7 +13,8 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".ui.activity.MainActivity"
+            android:theme="@style/MainTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -21,15 +22,15 @@
 
         </activity>
 
-        <activity android:name=".recyclerviewscroll.RecyclerViewScrollActivity" />
+        <activity android:name=".ui.activity.recyclerviewscroll.RecyclerViewScrollActivity" />
 
-        <activity android:name=".reflection.ReflectionActivity" />
-        <activity android:name=".crashoptimizition.CrashActivity"></activity>
-        <activity android:name=".crashoptimizition.OptimizationActivity" />
+        <activity android:name=".ui.activity.reflection.ReflectionActivity" />
+        <activity android:name=".ui.activity.crashoptimizition.CrashActivity"></activity>
+        <activity android:name=".ui.activity.crashoptimizition.OptimizationActivity" />
 
-        <activity android:name=".videolist.ui.VideoMutilActivity" />
-        <activity android:name=".keyboard.XianYuActivity" />
-        <activity android:name=".dragview.DragActivity" />
+        <activity android:name=".ui.activity.videolist.ui.VideoMutilActivity" />
+        <activity android:name=".ui.activity.keyboard.XianYuActivity" />
+        <activity android:name=".ui.activity.dragview.DragActivity" />
 
     </application>
 

@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.diaoyan.android.widget.DragCustomView
+    <com.diaoyan.android.ui.custom.DragCustomView
         android:id="@+id/container_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -15,7 +15,7 @@
         >
 
 
-    </com.diaoyan.android.widget.DragCustomView>
+    </com.diaoyan.android.ui.custom.DragCustomView>
 
     <View
         android:id="@+id/header_view"

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.diaoyan.android.keyboard.MyKeyBoardView
+<com.diaoyan.android.ui.activity.keyboard.MyKeyBoardView
     android:id="@+id/keyboard_view"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
