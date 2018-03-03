@@ -11,6 +11,7 @@ import com.diaoyan.android.base.BaseActivity;
 import com.diaoyan.android.model.bean.UserBean;
 import com.diaoyan.android.model.net.rest.LoginRest;
 import com.diaoyan.android.ui.activity.crashoptimizition.OptimizationActivity;
+import com.diaoyan.android.ui.activity.rx.RxAndroidActivity;
 import com.diaoyan.android.ui.dialog.ShareDialogFragment;
 import com.diaoyan.android.ui.activity.dragview.DragActivity;
 import com.diaoyan.android.ui.activity.keyboard.XianYuActivity;
@@ -60,50 +61,56 @@ public class MainActivity extends BaseActivity {
             case R.id.btn_share:
                 ShareDialogFragment.newInstance().show(getSupportFragmentManager(), "share_dialog");
                 break;
+            case R.id.btn_rxandroid:
+                startActivity(new Intent(mContext, RxAndroidActivity.class));
+                break;
             case R.id.btn_login:
-                String phone = "18612532078";
-                String code = "642895";
-                mLoginObserver = new Observer<UserBean>() {
-
-                    Disposable disposable;
-
-                    @Override
-                    public void onSubscribe(Disposable d) {
-                        disposable = d;
-                        mDisposables.add(d);
-                    }
-
-                    @Override
-                    public void onNext(UserBean value) {
-                        Toast.makeText(mContext, "onNext", Toast.LENGTH_SHORT).show();
-                    }
-
-                    @Override
-                    public void onError(Throwable e) {
-                        if (disposable != null && !disposable.isDisposed()) {
-                            disposable.dispose();
-                        }
-                        Toast.makeText(mContext, "error", Toast.LENGTH_SHORT).show();
-                    }
-
-                    @Override
-                    public void onComplete() {
-                        if (disposable != null && !disposable.isDisposed()) {
-                            disposable.dispose();
-                        }
-                        Toast.makeText(mContext, "onComplete", Toast.LENGTH_SHORT).show();
-                    }
-                };
-                LoginRest.getInstance().loginByMobile(phone, code, mLoginObserver);
+                rxjavaLogin();
                 break;
         }
     }
 
+
+    private void rxjavaLogin(){
+        String phone = "18612532078";
+        String code = "642895";
+        mLoginObserver = new Observer<UserBean>() {
+
+            Disposable disposable;
+
+            @Override
+            public void onSubscribe(Disposable d) {
+                disposable = d;
+                mDisposables.add(d);
+            }
+
+            @Override
+            public void onNext(UserBean value) {
+                Toast.makeText(mContext, "onNext", Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onError(Throwable e) {
+                if (disposable != null && !disposable.isDisposed()) {
+                    disposable.dispose();
+                }
+                Toast.makeText(mContext, "error", Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onComplete() {
+                if (disposable != null && !disposable.isDisposed()) {
+                    disposable.dispose();
+                }
+                Toast.makeText(mContext, "onComplete", Toast.LENGTH_SHORT).show();
+            }
+        };
+        LoginRest.getInstance().loginByMobile(phone, code, mLoginObserver);
+    }
+
     @Override
     protected void onDestroy() {
-        Toast.makeText(mContext, "onDestory1111", Toast.LENGTH_SHORT).show();
         super.onDestroy();
-        Toast.makeText(mContext, "onDestory2222", Toast.LENGTH_SHORT).show();
         if(mDisposables != null) {
             mDisposables.dispose();
         }

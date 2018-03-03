@@ -31,7 +31,7 @@
         <activity android:name=".ui.activity.videolist.ui.VideoMutilActivity" />
         <activity android:name=".ui.activity.keyboard.XianYuActivity" />
         <activity android:name=".ui.activity.dragview.DragActivity" />
-
+        <activity android:name=".ui.activity.rx.RxAndroidActivity" />
     </application>
 
 </manifest>
